@@ -1,8 +1,9 @@
 { inputs, self, ... }:
 {
     flake.modules.nixos.cirilla = { pkgs, ... }: {
-        nix.settings.experimental-features = [ "nix-command" "flakes" ];
-        nixpkgs.config.allowUnfree = true;
+        imports = [
+            self.modules.nixos.base
+        ];
 
         users.users."adam" = {
             isNormalUser = true;
@@ -80,8 +81,6 @@
             git
             github-cli
         ];
-
-        system.stateVersion = "26.05";
     };
 
     flake.nixosConfigurations = inputs.self.lib.mkNixos "x86_64-linux" "cirilla";
