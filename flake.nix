@@ -1,15 +1,27 @@
 {
-  description = "A very basic flake";
-
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    # others...
+    hjem = {
+      url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs }: {
+  # import all .nix files from nix folder
+  outputs = inputs: let
+    inherit (inputs.nixpkgs) lib;
+    inherit (lib.fileset) toList fileFilter;
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
-  };
+    isNix = file: file.hasExt "nix" && !lib.hasPrefix "_" file.name;
+    importTree = path: toList (fileFilter isNix path);
+    mkFlake = inputs.flake-parts.lib.mkFlake { inherit inputs; };
+  in mkFlake { imports = importTree ./nix; };
 }
