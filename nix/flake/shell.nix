@@ -14,6 +14,9 @@
                 inputs.disko.packages.${system}.disko
                 # pkgs
                 pkgs.dix
+                pkgs.just
+                pkgs.pciutils
+                pkgs.usbutils
                 # selfpkgs
                 selfpkgs.git
             ];
