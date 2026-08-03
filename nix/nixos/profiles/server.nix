@@ -1,9 +1,12 @@
 { inputs, self, ... }:
 {
-    flake.modules.nixos.server = {
+    flake.modules.nixos.server = { lib, ... }: {
         imports = [
             self.modules.nixos.base
         ];
+
+        # locale
+        time.timeZone = lib.mkForce "UTC";
 
         # network
         services.openssh = {

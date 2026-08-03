@@ -9,16 +9,6 @@
             # software
         ];
 
-        users.users."adam" = {
-            isNormalUser = true;
-            description = "Adam";
-            extraGroups = [ "networkmanager" "wheel" ];
-            packages = with pkgs; [
-            kdePackages.kate
-            #  thunderbird
-            ];
-        };
-
         # Bootloader.
         boot.loader.systemd-boot.enable = true;
         boot.loader.efi.canTouchEfiVariables = true;
@@ -27,9 +17,6 @@
         boot.kernelPackages = pkgs.linuxPackages_latest;
 
         networking.networkmanager.enable = true;
-
-        # Set your time zone.
-        time.timeZone = "America/Chicago";
 
         # Enable the X11 windowing system.
         # You can disable this if you're only using the Wayland session.
