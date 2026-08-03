@@ -12,11 +12,21 @@
             devshell.packages = [
                 # inputs
                 inputs.disko.packages.${system}.disko
+                inputs.colmena.packages.${system}.colmena
                 # pkgs
                 pkgs.dix
                 pkgs.just
                 pkgs.pciutils
                 pkgs.usbutils
+                pkgs.nixos-rebuild
+                pkgs.openssh
+                pkgs.sops
+                pkgs.age
+                pkgs.ssh-to-age
+                pkgs.wireguard-tools
+                pkgs.qrencode
+                pkgs.dig
+                pkgs.nixos-anywhere
                 # selfpkgs
                 selfpkgs.git
             ];
