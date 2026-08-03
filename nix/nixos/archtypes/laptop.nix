@@ -6,6 +6,7 @@
             self.modules.nixos.audio
         ];
 
+        # audio
         services.pipewire.wireplumber.extraConfig."53-laptop-power" = {
             "context.properties" = {
             "default.clock.quantum" = 2048;
@@ -19,5 +20,8 @@
             }
             ];
         };
+
+        # network
+        services.openssh.openFirewall = false;
     };
 }

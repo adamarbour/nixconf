@@ -6,7 +6,7 @@
             self.modules.nixos.audio
         ];
 
-        # Lower-latency quantum for the interface — desktop has CPU headroom
+        # audio
         services.pipewire.wireplumber.extraConfig."51-scarlett-latency" = {
             "monitor.alsa.rules" = [
             {
@@ -26,5 +26,8 @@
             }
             ];
         };
+
+        # network
+        services.openssh.openFirewall = false;
     };
 }
