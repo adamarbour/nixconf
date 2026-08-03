@@ -2,6 +2,16 @@
 {
     flake.modules.nixos.base = { pkgs, lib, ... }: {
 
+        imports = [
+            # inputs
+            inputs.hjem.nixosModules.default
+            # self
+            self.modules.nixos.user-adam
+        ];
+
+        # locale
+        time.timeZone = lib.mkDefault "America/Chicago";
+
         i18n.defaultLocale = "en_US.UTF-8";
         i18n.extraLocaleSettings = {
             LC_ADDRESS = "en_US.UTF-8";
