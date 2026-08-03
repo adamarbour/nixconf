@@ -1,0 +1,23 @@
+{ inputs, self, ... }:
+{
+    flake.modules.nixos.laptop = {
+        inputs = [
+            self.modules.nixos.base
+            self.modules.nixos.audio
+        ];
+
+        services.pipewire.wireplumber.extraConfig."53-laptop-power" = {
+            "context.properties" = {
+            "default.clock.quantum" = 2048;
+            };
+        };
+        services.pipewire.wireplumber.extraConfig."54-idle-suspend" = {
+            "monitor.alsa.rules" = [
+            {
+                matches = [{ "node.name" = "~alsa_output.*"; }];
+                actions.update-props."session.suspend-timeout-seconds" = 5;
+            }
+            ];
+        };
+    };
+}
