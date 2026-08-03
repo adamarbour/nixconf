@@ -1,7 +1,7 @@
 { inputs, self, ... }:
 {
     flake.modules.nixos.desktop = {
-        inputs = [
+        imports = [
             self.modules.nixos.base
             self.modules.nixos.audio
         ];

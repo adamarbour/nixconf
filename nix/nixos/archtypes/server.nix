@@ -1,7 +1,7 @@
 { inputs, self, ... }:
 {
     flake.modules.nixos.server = {
-        inputs = [
+        imports = [
             self.modules.nixos.base
         ];
     };
