@@ -6,7 +6,6 @@
             # inputs
             inputs.hjem.nixosModules.default
             # self
-            self.modules.nixos.kernel-blacklist
             self.modules.nixos.user-adam
         ];
 

@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.kernel-blacklist = { lib, ... }: {
+    flake.modules.nixos.base = { lib, ... }: {
         boot.blacklistedKernelModules = lib.concatLists [
             # Obscure network protocols
             [
