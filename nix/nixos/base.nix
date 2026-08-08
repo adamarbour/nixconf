@@ -9,8 +9,19 @@
             self.modules.nixos.user-adam
         ];
 
+        # packages
+        environment.systemPackages = with pkgs; [
+            # development
+            git
+        ];
+
         # locale
         time.timeZone = lib.mkDefault "America/Chicago";
+
+        services.xserver.xkb = {
+            layout = "us";
+            variant = "";
+        };
 
         i18n.defaultLocale = "en_US.UTF-8";
         i18n.extraLocaleSettings = {

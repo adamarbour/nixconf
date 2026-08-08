@@ -3,6 +3,7 @@
     flake.modules.nixos.desktop = {
         imports = [
             self.modules.nixos.base
+            self.modules.nixos.graphical
             self.modules.nixos.audio
         ];
 
