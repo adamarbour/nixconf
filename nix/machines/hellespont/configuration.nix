@@ -1,6 +1,6 @@
 { inputs, self, ... }:
 {
-    flake.modules.nixos.cirilla = { pkgs, ... }: {
+    flake.modules.nixos.hellespont = { pkgs, ... }: {
         imports = [
             # baseline
             self.modules.nixos.desktop
@@ -38,5 +38,5 @@
         ];
     };
 
-    flake.nixosConfigurations = inputs.self.lib.mkNixos "x86_64-linux" "hellspont";
+    flake.nixosConfigurations = inputs.self.lib.mkNixos "x86_64-linux" "hellespont";
 }

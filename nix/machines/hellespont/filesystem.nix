@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.cirilla = {
+    flake.modules.nixos.hellespont = {
 
         boot.initrd.luks.devices."luks-78bd7afb-3e79-4451-9e89-f99f85125947".device = "/dev/disk/by-uuid/78bd7afb-3e79-4451-9e89-f99f85125947";
 
