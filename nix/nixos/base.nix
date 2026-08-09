@@ -9,32 +9,14 @@
             self.modules.nixos.user-adam
         ];
 
+        # its nice to have at least some color in our tty
+  systemd.services."serial-getty@".environment.TERM = "xterm-256color";
+
         # packages
         environment.systemPackages = with pkgs; [
             # development
             git
         ];
-
-        # locale
-        time.timeZone = lib.mkDefault "America/Chicago";
-
-        services.xserver.xkb = {
-            layout = "us";
-            variant = "";
-        };
-
-        i18n.defaultLocale = "en_US.UTF-8";
-        i18n.extraLocaleSettings = {
-            LC_ADDRESS = "en_US.UTF-8";
-            LC_IDENTIFICATION = "en_US.UTF-8";
-            LC_MEASUREMENT = "en_US.UTF-8";
-            LC_MONETARY = "en_US.UTF-8";
-            LC_NAME = "en_US.UTF-8";
-            LC_NUMERIC = "en_US.UTF-8";
-            LC_PAPER = "en_US.UTF-8";
-            LC_TELEPHONE = "en_US.UTF-8";
-            LC_TIME = "en_US.UTF-8";
-        };
 
         # nix settings
 
@@ -115,26 +97,10 @@
             })
         ];
 
-        # security
-        environment.etc = {
-            # Empty /etc/securetty to prevent root login on tty.
-            securetty.text = ''
-            # /etc/securetty: list of terminals on which root is allowed to login.
-            # See securetty(5) and login(1).
-            '';
-
-            # Set machine-id to the Kicksecure machine-id, for privacy reasons.
-            # /var/lib/dbus/machine-id doesn't exist on dbus enabled NixOS systems,
-            # so we don't have to worry about that.
-            machine-id.text = ''
-            b08dfa6083e7567a1921a715000001fb
-            '';
-        };
 
         # boot
         boot = {
             loader.timeout = lib.mkDefault 3;
-            loader.systemd-boot.editor = lib.mkDefault false;
             consoleLogLevel = 3;
             initrd.verbose = false;
 
@@ -143,11 +109,7 @@
                 "nmi_watchdog=0"
             ];
 
-            tmp = {
-                useTmpfs = lib.mkDefault true;
-                tmpfsHugeMemoryPages = lib.mkDefault "within_size";
-                cleanOnBoot = lib.mkDefault (!config.boot.tmp.useTmpfs);
-            };
+
         };
 
         system.stateVersion = "26.05";
