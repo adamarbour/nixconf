@@ -4,10 +4,9 @@
 
         boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
         boot.initrd.kernelModules = [ ];
-        boot.kernelModules = [ "kvm-amd" "amdgpu" ];
+        boot.kernelModules = [ "amdgpu" ];
 
         services.xserver.videoDrivers = [ "amdgpu" ];
 
-        hardware.cpu.amd.updateMicrocode = lib.mkDefault true;
     };
 }

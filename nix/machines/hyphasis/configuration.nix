@@ -4,8 +4,12 @@
         imports = [
             # baseline
             self.modules.nixos.desktop
+            self.modules.nixos.gaming
+
             # hardware
+            self.modules.nixos.cpu-intel
             self.modules.nixos.yubikey
+
             # software
         ];
 
@@ -15,8 +19,6 @@
 
         # Use latest kernel.
         boot.kernelPackages = pkgs.linuxPackages_latest;
-
-        networking.networkmanager.enable = true;
 
         # Enable the X11 windowing system.
         services.xserver.enable = true;
