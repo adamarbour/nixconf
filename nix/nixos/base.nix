@@ -10,7 +10,7 @@
         ];
 
         # its nice to have at least some color in our tty
-  systemd.services."serial-getty@".environment.TERM = "xterm-256color";
+        systemd.services."serial-getty@".environment.TERM = "xterm-256color";
 
         # packages
         environment.systemPackages = with pkgs; [
@@ -112,7 +112,7 @@
 
         };
 
-        system.stateVersion = "26.05";
+
 
     };
 }

@@ -28,8 +28,5 @@
         }
       ];
     };
-
-    # network
-    services.openssh.openFirewall = false;
   };
 }
