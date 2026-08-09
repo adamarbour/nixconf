@@ -6,5 +6,11 @@
       useNetworkd = lib.mkForce true;
     };
 
+    services.tailscale = {
+      extraSetFlags = [
+        "--advertise-exit-node"
+      ];
+    };
+
   };
 }
