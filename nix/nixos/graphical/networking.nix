@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.graphical = { lib, ... }: {
+  flake.modules.nixos.graphical = { pkgs, lib, ... }: {
 
     networking = {
       networkmanager = {

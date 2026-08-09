@@ -11,11 +11,12 @@
       '';
 
       iwd.settings = {
-      Settings.AutoConnect = true;
+        Settings.AutoConnect = true;
 
-      General = {
-        EnableNetworkConfiguration = true;
-        RoamRetryInterval = 15;
+        General = {
+          EnableNetworkConfiguration = true;
+          RoamRetryInterval = 15;
+        };
       };
     };
 
