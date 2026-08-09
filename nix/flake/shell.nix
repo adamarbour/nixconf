@@ -29,6 +29,7 @@
                 pkgs.nixos-anywhere
                 # selfpkgs
                 selfpkgs.git
+                selfpkgs.nh
             ];
         };
     };
