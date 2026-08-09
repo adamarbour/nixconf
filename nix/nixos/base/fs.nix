@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.base = { pkgs, lib, ... }: {
+  flake.modules.nixos.base = { pkgs, lib, config, ... }: {
     services = {
       fstrim = {
         enable = true;
