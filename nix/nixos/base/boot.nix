@@ -5,7 +5,7 @@
       loader.timeout = lib.mkDefault 3;
       consoleLogLevel = 3;
 
-      efi.canTouchEfiVariables = true;
+      loader.efi.canTouchEfiVariables = true;
 
       kernelParams = [
         "nowatchdog"
