@@ -7,7 +7,9 @@
             self.modules.nixos.gaming
 
             # hardware
+            self.modules.nixos.hw-tpm
             self.modules.nixos.cpu-amd
+            self.modules.nixos.printing
             self.modules.nixos.yubikey
 
             # software
@@ -15,7 +17,6 @@
 
         # Bootloader.
         boot.loader.systemd-boot.enable = true;
-        boot.loader.efi.canTouchEfiVariables = true;
 
         # Use latest kernel.
         boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -28,16 +29,8 @@
         services.displayManager.sddm.enable = true;
         services.desktopManager.plasma6.enable = true;
 
-
-        # Enable CUPS to print documents.
-        services.printing.enable = true;
-
         programs.firefox.enable = true;
 
-        environment.systemPackages = with pkgs; [
-            git
-            github-cli
-        ];
     };
 
     flake.nixosConfigurations = inputs.self.lib.mkNixos "x86_64-linux" "hellespont";
