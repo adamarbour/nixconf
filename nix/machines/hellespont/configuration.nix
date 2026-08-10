@@ -2,10 +2,14 @@
 {
     flake.modules.nixos.hellespont = { pkgs, ... }: {
         imports = [
-            # baseline
+            # profiles
             self.modules.nixos.desktop
+            self.modules.nixos.gaming
+
             # hardware
+            self.modules.nixos.cpu-amd
             self.modules.nixos.yubikey
+
             # software
         ];
 
@@ -15,8 +19,6 @@
 
         # Use latest kernel.
         boot.kernelPackages = pkgs.linuxPackages_latest;
-
-        networking.networkmanager.enable = true;
 
         # Enable the X11 windowing system.
         # You can disable this if you're only using the Wayland session.
