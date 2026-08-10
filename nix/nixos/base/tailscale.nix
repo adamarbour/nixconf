@@ -13,6 +13,7 @@
       enable = true;
       permitCertUid = "root";
       disableUpstreamLogging = lib.mkDefault true;
+      useRoutingFeatures = "client";
       extraSetFlags = [
         "--accept-dns=false"
         "--accept-routes"
