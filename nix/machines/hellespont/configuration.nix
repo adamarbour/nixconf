@@ -14,7 +14,7 @@
             self.modules.nixos.yubikey
 
             # software
-            self.modules.nixos.boot-systemd
+            self.modules.nixos.boot-secure
         ];
 
         # Use latest kernel.

@@ -1,6 +1,6 @@
 { inputs, self, ... }:
 {
-  flake.modules.nixos.server = { pkgs, lib, ... }: {
+  flake.modules.nixos.boot-secure = { pkgs, lib, ... }: {
 
     imports = with inputs; [
       lanzaboote.nixosModules.lanzaboote
