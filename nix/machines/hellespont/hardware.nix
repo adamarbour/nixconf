@@ -1,12 +1,8 @@
 {
-    flake.modules.nixos.hellespont = { lib, modulesPath, ... }: {
-        imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  flake.modules.nixos.hellespont = { lib, modulesPath, ... }: {
 
-        boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
-        boot.initrd.kernelModules = [ ];
-        boot.kernelModules = [ "amdgpu" ];
+    imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+    boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
 
-        services.xserver.videoDrivers = [ "amdgpu" ];
-
-    };
+  };
 }

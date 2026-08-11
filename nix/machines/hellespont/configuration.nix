@@ -9,6 +9,7 @@
             # hardware
             self.modules.nixos.hw-tpm
             self.modules.nixos.cpu-amd
+            self.modules.nixos.gpu-amd
             self.modules.nixos.printing
             self.modules.nixos.yubikey
 

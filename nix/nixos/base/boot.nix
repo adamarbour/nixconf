@@ -5,6 +5,9 @@
       loader.timeout = lib.mkDefault 3;
       consoleLogLevel = 3;
 
+      loader.grub.configurationLimit = lib.mkDefault 5;
+      loader.systemd-boot.configurationLimit = lib.mkDefault 5;
+
       loader.efi.canTouchEfiVariables = true;
 
       kernelParams = [
