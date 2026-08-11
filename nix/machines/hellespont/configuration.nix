@@ -14,10 +14,8 @@
             self.modules.nixos.yubikey
 
             # software
+            self.modules.nixos.boot-systemd
         ];
-
-        # Bootloader.
-        boot.loader.systemd-boot.enable = true;
 
         # Use latest kernel.
         boot.kernelPackages = pkgs.linuxPackages_latest;
