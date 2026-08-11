@@ -14,7 +14,7 @@
       loader.systemd-boot.enable = lib.mkForce false;
       loader.grub.enable = lib.mkForce false;
 
-      boot.lanzaboote = {
+      lanzaboote = {
         enable = true;
         pkiBundle = "/var/lib/sbctl";
         autoGenerateKeys.enable = lib.mkDefault true;
