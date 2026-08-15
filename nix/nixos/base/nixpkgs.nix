@@ -13,6 +13,9 @@
     };
 
     nixpkgs.overlays = [
+
+      inputs.llm-agents.overlays.shared-nixpkgs
+
       (final: _prev: {
         stable = import inputs.nixpkgs-stable {
           inherit (final) config;
@@ -23,6 +26,7 @@
           system = pkgs.stdenv.hostPlatform.system;
         };
       })
+
     ];
 
   };

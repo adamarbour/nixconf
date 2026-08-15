@@ -25,7 +25,7 @@
     };
 
     programs.gamescope = {
-      enable = lib.mkDefault true;
+      enable = true;
       capSysNice = true;
     };
 

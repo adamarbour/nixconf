@@ -13,6 +13,7 @@
                 # inputs
                 inputs.disko.packages.${system}.disko
                 inputs.colmena.packages.${system}.colmena
+                inputs.llm-agents.packages.${system}.claude-code
                 # pkgs
                 pkgs.dix
                 pkgs.just
