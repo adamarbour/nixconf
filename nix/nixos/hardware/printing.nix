@@ -1,25 +1,15 @@
 {
-  flake.modules.nixos.printing = { pkgs, lib, config, ...}: {
+  flake.modules.nixos.printing = { lib, ... }: {
 
     services.printing = {
-      enable = true;
-      webInterface = config.services.printing.enable;
-      browsing = lib.mkDefault true;
-      allowFrom = [ "localhost" ];
-
-      cups-pdf.enable = true;
-
-      drivers = with pkgs; [
-        gutenprint
-        cnijfilter2
-      ];
+      enable = lib.mkDefault true;
+      browsed.enable = lib.mkDefault true;
     };
 
     services.avahi = {
-      enable = true;
-      nssmdns4 = true;
-      nssmdns6 = true;
-      openFirewall = true;
+      enable = lib.mkDefault true;
+      nssmdns4 = lib.mkDefault true;
+      openFirewall = lib.mkDefault true;
     };
 
   };
