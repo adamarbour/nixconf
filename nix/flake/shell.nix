@@ -23,6 +23,7 @@
                 pkgs.openssh
                 pkgs.sops
                 pkgs.age
+                pkgs.age-plugin-yubikey
                 pkgs.ssh-to-age
                 pkgs.wireguard-tools
                 pkgs.qrencode
