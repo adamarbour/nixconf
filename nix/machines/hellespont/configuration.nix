@@ -11,6 +11,7 @@
             self.modules.nixos.cpu-amd
             self.modules.nixos.gpu-amd
             self.modules.nixos.printing
+            self.modules.nixos.print-pdf
             self.modules.nixos.yubikey
 
             # software
