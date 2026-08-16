@@ -14,10 +14,8 @@
             self.modules.nixos.yubikey
 
             # software
+            self.modules.nixos.boot-systemd
         ];
-
-        # Bootloader.
-        boot.loader.systemd-boot.enable = true;
 
         # Use latest kernel.
         boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -29,9 +27,6 @@
         # Enable the KDE Plasma Desktop Environment.
         services.displayManager.sddm.enable = true;
         services.desktopManager.plasma6.enable = true;
-
-        # Enable CUPS to print documents.
-        services.printing.enable = true;
 
         programs.firefox.enable = true;
     };
