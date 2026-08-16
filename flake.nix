@@ -36,6 +36,10 @@
       inputs.treefmt-nix.follows = "treefmt-nix";
       inputs.systems.follows = "systems";
     };
+    nix-cachyos-kernel = {
+      url = "github:xddxdd/nix-cachyos-kernel/release";
+      inputs.flake-parts.follows = "flake-parts";
+    };
     nix-index-database = {
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";

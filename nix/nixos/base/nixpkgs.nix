@@ -14,6 +14,7 @@
 
     nixpkgs.overlays = [
 
+      inputs.nix-cachyos-kernel.overlays.pinned
       inputs.llm-agents.overlays.shared-nixpkgs
 
       (final: _prev: {
