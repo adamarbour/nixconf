@@ -10,12 +10,15 @@
         update_config=1
       '';
 
-      iwd.settings = {
-        Settings.AutoConnect = true;
-
-        General = {
-          EnableNetworkConfiguration = true;
-          RoamRetryInterval = 15;
+      iwd = {
+        enable = true;
+        settings = {
+          Settings.AutoConnect = false;
+          General = {
+            AddressRandomization = "network";
+            EnableNetworkConfiguration = true;
+            RoamRetryInterval = 15;
+          };
         };
       };
     };
