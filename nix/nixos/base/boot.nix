@@ -24,7 +24,7 @@
       };
       initrd = {
         systemd.enable = lib.mkDefault true;
-        verbose = lib.mkDefault false;
+#        verbose = lib.mkDefault false;
       };
     };
 

@@ -1,7 +1,7 @@
 {
   flake.modules.nixos.base = { pkgs, lib, config, ... }: {
 
-    boot.loader.systemd-boot.editor = lib.mkDefault false;
+#    boot.loader.systemd-boot.editor = lib.mkDefault false;
 
     boot.kernel.sysctl = {
       # Prevent boot console log leaking information
@@ -38,7 +38,6 @@
       "net.core.default_qdisc" = "cake";
 
       ## Userspace hardening
-      "kernel.yama.ptrace_scope" = lib.mkDefault 1;  # override to 2/3 on server class hosts
       "vm.mmap_rnd_bits" = 32;
       "vm.mmap_rnd_compat_bits" = 16;
       "fs.protected_symlinks" = 1;
@@ -80,14 +79,7 @@
 
       # certain exploits cause an "oops", this makes the kernel panic if an "oops" occurs
       "oops=panic"
-
-      # only alows kernel modules that have been signed with a valid key to be loaded
-      # making it harder to load malicious kernel modules
-      # can make VirtualBox or Nvidia drivers unusable
-      "module.sig_enforce=1"
-
-      # prevents user space code excalation
-      "lockdown=confidentiality"
+      "lockdown=integrity"
 
       # enable buddy allocator free poisoning
       "page_poison=on"
