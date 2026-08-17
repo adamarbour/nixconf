@@ -23,7 +23,8 @@
         };
       };
       initrd = {
-        verbose = false;
+        systemd.enable = lib.mkDefault true;
+        verbose = lib.mkDefault false;
       };
     };
 
