@@ -1,6 +1,6 @@
 { inputs, self, ... }:
 {
-  flake.modules.nixos.caspian = { pkgs, modulesPath... }: {
+  flake.modules.nixos.caspian = { pkgs, modulesPath, ... }: {
     imports = [
       # profiles
       self.modules.nixos.server
