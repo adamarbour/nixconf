@@ -10,7 +10,9 @@
             self.modules.nixos.hw-tpm
             self.modules.nixos.cpu-intel
             self.modules.nixos.gpu-intel
+            self.modules.nixos.gpu-prime # nvidia RTX 500
             self.modules.nixos.printing
+            self.modules.nixos.print-pdf
             self.modules.nixos.yubikey
 
             # software
