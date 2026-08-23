@@ -9,8 +9,8 @@
         packageOverrides.treefmt = config.treefmt.build.wrapper;
       };
 
-      deadnix.enable = false;
-      statix.enable = false;
+      deadnix.enable = true;
+      statix.enable = true;
 
       check-added-large-files.enable = true;
       check-case-conflicts.enable = true;
