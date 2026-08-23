@@ -5,9 +5,16 @@ in
 {
   flake.modules.nixos.hellespont = { pkgs, ... }: {
     imports = with self.modules.nixos; [
+      # profiles / roles
       desktop
+      # hardware
+      hw-cpu-amd
+      hw-gpu-amd
       disko
       self.diskoConfigurations.hellespont
+      # features
+      has-controllers
+
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;

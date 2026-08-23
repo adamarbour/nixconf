@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.hellespont = { lib, modulesPath, ... }: {
+  flake.modules.nixos.hellespont = { modulesPath, ... }: {
     imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
     boot = {
@@ -11,9 +11,6 @@
         "usbhid"
         "sd_mod"
       ];
-      kernelModules = [ "kvm-amd" ];
     };
-
-    hardware.cpu.amd.updateMicrocode = lib.mkDefault true;
   };
 }
