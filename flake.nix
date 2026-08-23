@@ -84,6 +84,11 @@
       url = "github:BirdeeHub/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    my-secrets = {
+      url = "git+ssh://git@github.com/adamarbour/super-secret.git";
+      flake = false;
+    };
   };
 
   # import all nix files under the nix folder (exclude prefix _)

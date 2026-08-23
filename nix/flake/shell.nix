@@ -69,6 +69,7 @@
               age
               age-plugin-yubikey
               yubikey-manager
+              yubikey-personalization
               pcsc-tools
               ssh-to-age
               sops

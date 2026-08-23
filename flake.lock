@@ -291,6 +291,22 @@
         "type": "github"
       }
     },
+    "my-secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787508126,
+        "narHash": "sha256-Ti1C4MDgAlNQF1kcAxX1zAR6gSNwjnYr3pJEznqMA1s=",
+        "ref": "refs/heads/main",
+        "rev": "494569c44d1aebcbf791c1be8c86de8779cabed0",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/adamarbour/super-secret.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/adamarbour/super-secret.git"
+      }
+    },
     "nix-cachyos-kernel": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -452,6 +468,7 @@
         "hjem": "hjem",
         "impermanence": "impermanence",
         "llm-agents": "llm-agents",
+        "my-secrets": "my-secrets",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nix-index-database": "nix-index-database",
         "nix-topology": "nix-topology",
