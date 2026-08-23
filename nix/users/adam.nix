@@ -22,14 +22,23 @@
       clobberFiles = true;
 
       files = {
-        ".ssh/config".text = ''
-          Host github.com
-            HostName github.com
-            User git
-            IdentitiesOnly yes
-            IdentityFile ~/.ssh/id_ed25519_yk1
-            IdentityFile ~/.ssh/id_ed25519_yk2
-        '';
+        ".ssh" = {
+          type = "directory";
+          permissions = "0700";
+        };
+        ".ssh/config" = {
+          type = "copy";
+          permissions = "0600";
+
+          text = ''
+            Host github.com
+              HostName github.com
+              User git
+              IdentitiesOnly yes
+              IdentityFile ~/.ssh/id_ed25519_yk1
+              IdentityFile ~/.ssh/id_ed25519_yk2
+          '';
+        };
       };
     };
 

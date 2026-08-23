@@ -67,13 +67,15 @@
               selfpkgs.my-git
 
               age
+              age-plugin-yubikey
+              yubikey-manager
+              pcsc-tools
               ssh-to-age
               sops
               nixos-rebuild
               cachix
               dix
               just
-              yubikey-manager
               libfido2
               usbutils
               openssh
