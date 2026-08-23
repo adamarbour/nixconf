@@ -8,7 +8,6 @@ in
       desktop
       disko
       self.diskoConfigurations.hellespont
-      has-sops # add secrets
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;

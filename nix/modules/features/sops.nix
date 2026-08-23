@@ -5,13 +5,23 @@
       sops
     ];
 
-    sops = {
-      defaultSopsFile = config.nixSecrets.root + "/secrets/default.yaml";
-      age = {
-        generateKey = lib.mkDefault false;
-        sshKeyPaths = [
-          "/etc/ssh/ssh_host_ed25519_key"
-        ];
+    options.nixSecrets.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable SOPS-based secrets management.";
+    };
+
+    config = lib.mkIf config.nixSecrets.enable {
+      sops = {
+        defaultSopsFile = config.nixSecrets.root + "/secrets/default.yaml";
+        age = {
+          generateKey = lib.mkDefault false;
+          sshKeyPaths = [
+            "/etc/ssh/ssh_host_ed25519_key"
+          ];
+        };
+
+        secrets.passwd.neededForUsers = true;
       };
     };
   };
