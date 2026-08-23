@@ -26,5 +26,9 @@
     };
 
     services.power-profiles-daemon.enable = true;
+
+    my.programs = {
+      direnv.enable = true;
+    };
   };
 }
