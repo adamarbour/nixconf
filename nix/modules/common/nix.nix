@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.common = { pkgs, lib, ... }: {
-    users.groups.deploy = {}; # we use this for trusted users
+  flake.modules.nixos.common = { pkgs, ... }: {
+    users.groups.deploy = { }; # we use this for trusted users
 
     nix = {
       channel.enable = false;
@@ -10,7 +10,10 @@
       nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
       settings = {
-        trusted-users = [ "root" "@deploy" ];
+        trusted-users = [
+          "root"
+          "@deploy"
+        ];
 
         experimental-features = [
           "nix-command"

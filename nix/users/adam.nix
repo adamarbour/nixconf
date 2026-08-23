@@ -4,7 +4,12 @@
     users.users.adam = {
       isNormalUser = true;
       description = "Adam";
-      extraGroups = [ "networkmanager" "wheel" "deploy" "ssh-login" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "deploy"
+        "ssh-login"
+      ];
 
       # Initial throwaway password: "nixos"
       initialHashedPassword = lib.mkDefault "$y$j9T$FbXu9/hYPFtVkAy.3JSCs1$XAgWbQs7MbNHP/jH3LRYoxzcwhpQAjY74U7fv40XO94";
@@ -15,6 +20,17 @@
       user = "adam";
       directory = "/home/adam";
       clobberFiles = true;
+
+      files = {
+        ".ssh/config".text = ''
+          Host github.com
+            HostName github.com
+            User git
+            IdentitiesOnly yes
+            IdentityFile ~/.ssh/id_ed25519_yk1
+            IdentityFile ~/.ssh/id_ed25519_yk2
+        '';
+      };
     };
 
   };

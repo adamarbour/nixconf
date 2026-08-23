@@ -1,14 +1,19 @@
 {
   flake.modules.nixos.common = { lib, ... }: {
     boot = {
-      loader.timeout = lib.mkDefault 3;
       consoleLogLevel = 3;
-      loader.grub.configurationLimit = lib.mkDefault 7;
-      loader.systemd-boot.configurationLimit = lib.mkDefault 7;
+      loader = {
+        timeout = lib.mkDefault 3;
+        grub.configurationLimit = lib.mkDefault 10;
+        systemd-boot.configurationLimit = lib.mkDefault 10;
 
-      loader.efi.canTouchEfiVariables = true;
+        efi.canTouchEfiVariables = true;
+      };
 
-      kernelParams = [ "nowatchdog" "nmi_watchdog=0" ];
+      kernelParams = [
+        "nowatchdog"
+        "nmi_watchdog=0"
+      ];
 
       kernel.sysfs = {
         kernel.mm.transparent_hugepage = {

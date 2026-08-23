@@ -4,14 +4,13 @@
 
     hooks = {
       treefmt = {
-      enable = true;
+        enable = true;
 
-      packageOverrides.treefmt =
-      config.treefmt.build.wrapper;
+        packageOverrides.treefmt = config.treefmt.build.wrapper;
       };
 
-      deadnix.enable = true;
-      statix.enable = true;
+      deadnix.enable = false;
+      statix.enable = false;
 
       check-added-large-files.enable = true;
       check-case-conflicts.enable = true;

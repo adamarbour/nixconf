@@ -1,6 +1,8 @@
-{ inputs, self, ... }: let
+{ self, ... }:
+let
   inherit (self.lib) mkNixos;
-in {
+in
+{
   flake.modules.nixos.hellespont = { pkgs, ... }: {
     imports = with self.modules.nixos; [
       desktop
@@ -10,10 +12,11 @@ in {
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
-    services.xserver.enable = true;
-
-    services.displayManager.sddm.enable = true;
-    services.desktopManager.plasma6.enable = true;
+    services = {
+      xserver.enable = true;
+      displayManager.sddm.enable = true;
+      desktopManager.plasma6.enable = true;
+    };
 
     programs.firefox.enable = true;
   };

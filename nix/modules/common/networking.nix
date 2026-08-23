@@ -1,8 +1,11 @@
 {
   flake.modules.nixos.common = { lib, config, ... }: {
     networking = {
-      hostId = if (config.boot.zfs.enabled) then "8425e349"
-        else builtins.substring 0 8 (builtins.hashString "md5" config.networking.hostName);
+      hostId =
+        if config.boot.zfs.enabled then
+          "8425e349"
+        else
+          builtins.substring 0 8 (builtins.hashString "md5" config.networking.hostName);
       useDHCP = lib.mkDefault false;
 
       enableIPv6 = true;

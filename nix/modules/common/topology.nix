@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  flake.modules.nixos.common = { lib, ... }: {
+  flake.modules.nixos.common = {
     imports = with self.modules.nixos; [
       topology
     ];

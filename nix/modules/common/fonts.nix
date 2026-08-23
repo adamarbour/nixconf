@@ -8,7 +8,7 @@
       };
 
       # this can allow us to save some storage space
-      fontDir.decompressFonts = true;
+      fontDir.decompressFonts = lib.mkDefault true;
     };
   };
 }

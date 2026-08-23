@@ -3,7 +3,7 @@
     boot.tmp = {
       useTmpfs = true;
       tmpfsHugeMemoryPages = lib.mkDefault "within_size";
-      cleanOnBoot = (!config.boot.tmp.useTmpfs);
+      cleanOnBoot = !config.boot.tmp.useTmpfs;
     };
   };
 }

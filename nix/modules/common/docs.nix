@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.common = { lib, config, ... }: {
+  flake.modules.nixos.common = { lib, ... }: {
     documentation = {
       enable = lib.mkForce false;
       dev.enable = lib.mkForce false;

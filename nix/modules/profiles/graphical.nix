@@ -1,8 +1,9 @@
- { self, ... }:
- {
+{ self, ... }:
+{
   flake.modules.nixos.graphical = { pkgs, ... }: {
     imports = with self.modules.nixos; [
-      graphics
+      has-graphics
+      has-yubikey
       adam
     ];
 

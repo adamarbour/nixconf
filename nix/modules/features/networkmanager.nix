@@ -1,4 +1,4 @@
- {
+{
   flake.modules.nixos.networkmanager = { pkgs, ... }: {
     networking.networkmanager = {
       enable = true;

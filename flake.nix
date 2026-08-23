@@ -32,15 +32,19 @@
     };
     impermanence = {
       url = "github:nix-community/impermanence";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "";
+      };
     };
     llm-agents = {
       url = "github:numtide/llm-agents.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.treefmt-nix.follows = "treefmt-nix";
-      inputs.systems.follows = "systems";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        treefmt-nix.follows = "treefmt-nix";
+        systems.follows = "systems";
+      };
     };
     nix-cachyos-kernel = {
       url = "github:xddxdd/nix-cachyos-kernel/release";
@@ -52,8 +56,10 @@
     };
     nix-topology = {
       url = "github:oddlama/nix-topology";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -64,9 +70,11 @@
     };
     terranix = {
       url = "github:terranix/terranix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.systems.follows = "systems";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        systems.follows = "systems";
+      };
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
@@ -79,11 +87,14 @@
   };
 
   # import all nix files under the nix folder (exclude prefix _)
-  outputs = inputs: let
-    inherit (inputs.nixpkgs) lib;
-    inherit (lib.fileset) toList fileFilter;
-    isNix = file: file.hasExt "nix" && !lib.hasPrefix "_" file.name;
-    importTree = path: toList (fileFilter isNix path);
-    mkFlake = inputs.flake-parts.lib.mkFlake { inherit inputs; };
-  in mkFlake { imports = importTree ./nix; };
+  outputs =
+    inputs:
+    let
+      inherit (inputs.nixpkgs) lib;
+      inherit (lib.fileset) toList fileFilter;
+      isNix = file: file.hasExt "nix" && !lib.hasPrefix "_" file.name;
+      importTree = path: toList (fileFilter isNix path);
+      mkFlake = inputs.flake-parts.lib.mkFlake { inherit inputs; };
+    in
+    mkFlake { imports = importTree ./nix; };
 }

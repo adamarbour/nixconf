@@ -1,4 +1,4 @@
- {
+{
   flake.modules.nixos.systemd-boot = { lib, ... }: {
     boot.loader = {
       grub.enable = lib.mkForce false;

@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.common = { lib, ... }: {
-    users.groups.ssh-login = {};
+    users.groups.ssh-login = { };
 
     persistence.files = [
       "/etc/ssh/ssh_host_ed25519_key"
@@ -47,7 +47,10 @@
       };
 
       hostKeys = [
-        { path = "/etc/ssh/ssh_host_ed25519_key"; type = "ed25519"; }
+        {
+          path = "/etc/ssh/ssh_host_ed25519_key";
+          type = "ed25519";
+        }
       ];
       extraConfig = ''
         AuthenticationMethods publickey

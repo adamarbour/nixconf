@@ -1,13 +1,13 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.common =  { pkgs, ... }: {
+  flake.modules.nixos.common = { pkgs, ... }: {
     nixpkgs = {
       config = {
         allowUnfree = true;
         allowUnfreePredicate = _: true;
         allowVariants = true;
         allowBroken = false;
-        permittedInsecurePackages = [];
+        permittedInsecurePackages = [ ];
         allowUnsupportedSystem = false;
         allowAliases = false;
       };
