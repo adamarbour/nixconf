@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.sops = {
+  flake.modules.nixos.sops = { lib, ... }: {
     imports = with inputs; [
       sops-nix.nixosModules.sops
     ];

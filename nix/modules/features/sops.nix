@@ -6,7 +6,7 @@
     ];
 
     sops = {
-      sops.defaultSopsFile = config.nixSecrets.root + "/secrets/default.yaml";
+      defaultSopsFile = config.nixSecrets.root + "/secrets/default.yaml";
       age = {
         generateKey = lib.mkDefault false;
         sshKeyPaths = [
