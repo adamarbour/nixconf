@@ -1,0 +1,26 @@
+{
+  flake.modules.nixos.common = { lib, ... }: {
+    boot = {
+      loader.timeout = lib.mkDefault 3;
+      consoleLogLevel = 3;
+      loader.grub.configurationLimit = lib.mkDefault 7;
+      loader.systemd-boot.configurationLimit = lib.mkDefault 7;
+
+      loader.efi.canTouchEfiVariables = true;
+
+      kernelParams = [ "nowatchdog" "nmi_watchdog=0" ];
+
+      kernel.sysfs = {
+        kernel.mm.transparent_hugepage = {
+          enabled = "always";
+          defrag = "defer";
+          shmem_enabled = "within_size";
+        };
+      };
+      initrd = {
+        systemd.enable = lib.mkDefault true;
+        verbose = lib.mkDefault false;
+      };
+    };
+  };
+}
