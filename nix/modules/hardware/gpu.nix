@@ -42,13 +42,13 @@
 
     hw-gpu-nvidia-prime = { lib, ... }: {
       hardware.nvidia = {
-        branch = lib.mkDefault "latest";
+        branch = lib.mkDefault "stable";
         open = lib.mkDefault false;
         nvidiaSettings = lib.mkDefault false;
         powerManagement.enable = lib.mkDefault true;
 
         prime.offload = {
-          enable = lib.mkDefault true;
+          enable = true;
           enableOffloadCmd = lib.mkDefault true;
         };
       };

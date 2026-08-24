@@ -80,6 +80,7 @@
               libfido2
               usbutils
               openssh
+              nixos-anywhere
             ]);
 
           startup.git-hooks.text = config.pre-commit.installationScript;
