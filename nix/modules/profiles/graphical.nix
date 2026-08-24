@@ -6,6 +6,7 @@
       has-graphics
       has-yubikey
       policy-polkit
+      policy-u2f-yubikey
       adam
     ];
 
