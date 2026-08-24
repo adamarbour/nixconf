@@ -5,6 +5,7 @@
       common
       my-programs # bring in default programs and options
       has-sops # secrets enabled by default
+      policy-security-baseline
     ];
   };
 }

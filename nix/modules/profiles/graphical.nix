@@ -5,6 +5,7 @@
       has-audio
       has-graphics
       has-yubikey
+      policy-polkit
       adam
     ];
 
