@@ -64,6 +64,7 @@
             config.pre-commit.settings.enabledPackages
             ++ (with pkgs; [
               inputs.disko.packages.${system}.disko
+              inputs.llm-agents.packages.${system}.pi
               selfpkgs.my-git
 
               age

@@ -31,6 +31,13 @@
         })
       ];
 
+      environment.sessionVariables = {
+        GIT_AUTHOR_NAME = "Adam Arbour";
+        GIT_AUTHOR_EMAIL = "845679+adamarbour@users.noreply.github.com";
+        GIT_COMMITTER_NAME = "Adam Arbour";
+        GIT_COMMITTER_EMAIL = "845679+adamarbour@users.noreply.github.com";
+      };
+
       hjem.users.adam = {
         enable = true;
         user = "adam";
