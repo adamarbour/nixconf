@@ -27,6 +27,8 @@
             enable = false;
             settings = {
               authfile = "/etc/u2f-mappings";
+
+              origin = "pam://nixos";
               cue = true;
               userpresence = 1;
               pinverifcation = 1;
@@ -63,8 +65,7 @@
 
       # declare my mappings in the policy
       environment.etc."u2f-mappings".text = ''
-        adam:kspT18TtNCTHC0cw3HapDp+xrOM6yQ/kDOU1vehTylRBJYG9SM5XMoiXEB4wfSl4Hmh43Pb+f11MNjOTmb2dtQ==,2wrSS5HF1mNZ1/0tbC1DoGvwN5dUKlO7muNLVRkZaUKSGLlj9eX/TkB0MGKLAS6PC8JgsUcMiLz9OHGx8dRhbA==,es256,+presence+pin
-        adam:/nHvI9jzXNz5TLoAb0NqLZwm8ylDHpOn9PTyAmMEoxXCBRybZDu4A4KfpDx01FGn/2C4l2mvDSkYKSmGVAaTGQ==,zokzZsQ+ZyKmDigr7wCKWxW0tnR5jqOBDq6aDBiqxPXHMHVCUYeHEsMGLhEW9HRQ8Tzs9OGgCILGgBU8BHHZtg==,es256,+presence+pin
+        adam:ktxWxvqDN2yBfWzd9ks6UUWr/M+RiCwKLYVNhZkUxPBEytdMTtRghpHJR6bQXxe3cG1dHU+i+cPB3eooYDbcaQ==,AkSdqZWpP4VUG0RxiREOzXdvF5pBHCR8Ar3kKRNL/+o4C8Jdb2DDjnd19iql25gnox1LP3O5SvztIsJTr58y1A==,es256,+presence+pin:B96CzZ3mQNDz1Zz0G5Coh4NNPNEaX2qEelIgbKvwQ30w93F+rE8swdgjxkseOrdhre2YO3pvAG5W5JMtvdJIXg==,6CbinGKKkAJlX3I/6xInfUB8gCUlcC4ZTS4n1DwIJ+5vM6LEg0zHW8bxCf/iDvgp/GFwaa+1FYG+3Boy8i7GVQ==,es256,+presence+pin
       '';
     };
 }
