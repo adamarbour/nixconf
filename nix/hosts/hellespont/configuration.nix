@@ -10,6 +10,8 @@ in
       # hardware
       hw-cpu-amd
       hw-gpu-amd
+      hw-focusrite-scarlett
+      # disk
       disko
       self.diskoConfigurations.hellespont
       # features

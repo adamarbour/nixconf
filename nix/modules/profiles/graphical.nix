@@ -2,6 +2,7 @@
 {
   flake.modules.nixos.graphical = { pkgs, ... }: {
     imports = with self.modules.nixos; [
+      has-audio
       has-graphics
       has-yubikey
       adam
