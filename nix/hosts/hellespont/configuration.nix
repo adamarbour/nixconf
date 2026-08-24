@@ -16,7 +16,7 @@ in
       self.diskoConfigurations.hellespont
       # features
       has-controllers
-
+      has-wifi
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;

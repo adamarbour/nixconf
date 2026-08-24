@@ -5,6 +5,7 @@
       systemd-boot
       networkmanager
       graphical
+      has-wifi
     ];
   };
 }
