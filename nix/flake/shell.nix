@@ -82,6 +82,7 @@
               usbutils
               openssh
               nixos-anywhere
+              nebula
             ]);
 
           startup.git-hooks.text = config.pre-commit.installationScript;
