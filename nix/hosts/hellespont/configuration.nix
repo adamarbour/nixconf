@@ -16,6 +16,7 @@ in
       self.diskoConfigurations.hellespont
       # features
       has-controllers
+      has-gaming
       has-wifi
     ];
 
