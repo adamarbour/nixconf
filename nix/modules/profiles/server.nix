@@ -10,5 +10,9 @@
       cpuFreqGovernor = "schedutil";
       powertop.enable = true;
     };
+
+    my.services = {
+      sshguard.enable = true;
+    };
   };
 }

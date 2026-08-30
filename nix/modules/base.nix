@@ -8,5 +8,9 @@
       has-sops # secrets enabled by default
       policy-security-baseline
     ];
+
+    my.services = {
+      twingate.enable = true;
+    };
   };
 }

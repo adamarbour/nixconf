@@ -19,6 +19,8 @@
           enable = true;
           package = pkgs.unstable.twingate;
         };
+
+        networking.firewall.trustedInterfaces = lib.mkDefault [ "sdwan0" ];
       };
     };
 }
