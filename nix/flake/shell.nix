@@ -10,7 +10,6 @@
       devshells.default = {
         commands = [
           {
-            name = "format";
             package = config.treefmt.build.wrapper;
             category = "quality";
             help = "Format the repository";
