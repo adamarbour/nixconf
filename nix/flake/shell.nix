@@ -38,6 +38,10 @@
             value = "experimental-features = nix-command flakes";
           }
           {
+            name = "NH_FLAKE";
+            eval = "$PRJ_ROOT";
+          }
+          {
             name = "GIT_AUTHOR_NAME";
             value = "Adam Arbour";
           }
@@ -83,6 +87,7 @@
               openssh
               nixos-anywhere
               nebula
+              nh
             ]);
 
           startup.git-hooks.text = config.pre-commit.installationScript;
