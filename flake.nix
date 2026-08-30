@@ -86,7 +86,7 @@
     };
 
     my-secrets = {
-      url = "git+ssh://git@github.com/adamarbour/super-secret.git";
+      url = "path:./secrets";
       flake = false;
     };
   };
