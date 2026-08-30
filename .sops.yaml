@@ -1,0 +1,21 @@
+keys:
+  - &master age1zhctscxnn9wl6mx5jxsrj5jth3vqws64cyjtydl0xdf9tmhmcayq8y6v5u
+  - &adam_yk1 age1yubikey1qwwu3yu02yffwmk4jhmake2jtc2zzrt4jlvhs8uxff5u8q546rdhc4jq0y6
+  - &adam_yk2 age1yubikey1q07dgp7ama6saclfh645f7uvejc4mudqnl54wa5mufr0qt5y6a5ku34vpxz
+  - &hellespont age1pyrgtn9ujr949gf6vtd9j89tvmq449nvd2ys5y5uyq6fvfusva5sd9th95
+
+creation_rules:
+  - path_regex: ^secrets/(default|hellespont)\.yaml$
+    key_groups:
+      - age:
+        - *master
+        - *adam_yk1
+        - *adam_yk2
+        - *hellespont
+
+  - path_regex: ^secrets/.*$
+    key_groups:
+      - age:
+        - *master
+        - *adam_yk1
+        - *adam_yk2

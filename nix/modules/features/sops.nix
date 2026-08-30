@@ -5,15 +5,17 @@
       sops
     ];
 
-    options.nixSecrets.enable = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Enable SOPS-based secrets management.";
+    options.nixSecrets = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Enable SOPS-based secrets management.";
+      };
     };
 
     config = lib.mkIf config.nixSecrets.enable {
       sops = {
-        defaultSopsFile = config.nixSecrets.root + "/secrets/default.yaml";
+        defaultSopsFile = config.nixSecrets.root + "/default.yaml";
         age = {
           generateKey = lib.mkDefault false;
           sshKeyPaths = [
