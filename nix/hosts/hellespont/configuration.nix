@@ -3,33 +3,19 @@ let
   inherit (self.lib) mkNixos;
 in
 {
-  flake.modules.nixos.hellespont = { pkgs, ... }: {
+  flake.modules.nixos.atlas = { pkgs, ... }: {
     imports = with self.modules.nixos; [
       # profiles / roles
-      desktop
+      server
       # hardware
-      hw-cpu-amd
-      hw-gpu-amd
-      hw-focusrite-scarlett
       # disk
       disko
-      self.diskoConfigurations.hellespont
+      self.diskoConfigurations.atlas
       # features
-      has-controllers
-      has-gaming
-      has-wifi
     ];
 
     boot.kernelPackages = pkgs.linuxPackages_latest;
-
-    services = {
-      xserver.enable = true;
-      displayManager.sddm.enable = true;
-      desktopManager.plasma6.enable = true;
-    };
-
-    programs.firefox.enable = true;
   };
 
-  flake.nixosConfigurations = mkNixos "x86_64-linux" "hellespont";
+  flake.nixosConfigurations = mkNixos "x86_64-linux" "atlas";
 }
