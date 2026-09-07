@@ -31,6 +31,21 @@
         })
       ];
 
+      sops.secrets = lib.mkIf config.nixSecrets.enable {
+        "my-ssh/key" = {
+          owner = "adam"; # your username
+          group = "users";
+          mode = "0400";
+          path = "/home/adam/.ssh/id_ed25519";
+        };
+        "my-ssh/pub" = {
+          owner = "adam";
+          group = "users";
+          mode = "0444";
+          path = "/home/adam/.ssh/id_ed25519.pub";
+        };
+      };
+
       environment.sessionVariables = {
         GIT_AUTHOR_NAME = "Adam Arbour";
         GIT_AUTHOR_EMAIL = "845679+adamarbour@users.noreply.github.com";
