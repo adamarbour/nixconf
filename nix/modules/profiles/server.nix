@@ -3,7 +3,7 @@
   flake.modules.nixos.server = {
     imports = with self.modules.nixos; [
       grub-boot
-      deploy-user
+      user-deploy
     ];
 
     powerManagement = {

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.atlas = { modulesPath, ... }: {
+  flake.modules.nixos.atlas = { lib, modulesPath, ... }: {
     imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
 
     boot = {
@@ -13,7 +13,7 @@
     };
 
     boot.loader.grub = {
-      device = "/dev/vda";
+      devices = lib.mkForce [ "/dev/vda" ];
     };
   };
 }
