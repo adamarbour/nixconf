@@ -33,7 +33,7 @@
 
       sops.secrets = lib.mkIf config.nixSecrets.enable {
         "my-ssh/key" = {
-          owner = "adam"; # your username
+          owner = "adam";
           group = "users";
           mode = "0400";
           path = "/home/adam/.ssh/id_ed25519";
