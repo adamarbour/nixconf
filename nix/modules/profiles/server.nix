@@ -3,6 +3,7 @@
   flake.modules.nixos.server = {
     imports = with self.modules.nixos; [
       grub-boot
+      networkd
       user-deploy
     ];
 
