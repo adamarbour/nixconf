@@ -19,6 +19,9 @@
           attack_threshold = lib.mkDefault 30;
           blocktime = lib.mkDefault 120;
           detection_time = lib.mkDefault 1800;
+          whitelist = [
+            "10.254.0.0/24" # nebula
+          ];
         };
       };
     };
