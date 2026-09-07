@@ -26,6 +26,14 @@
             owner = "adam";
             mode = "0400";
           };
+          "nebula-key" = {
+            sopsFile = config.nixSecrets.hostFile;
+            key = "nebula/host-key";
+          };
+          "nebula-crt" = {
+            sopsFile = config.nixSecrets.hostFile;
+            key = "nebula/host-crt";
+          };
         };
 
         environment.systemPackages = lib.mkIf cfg.nebula.canSign [

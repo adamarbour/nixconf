@@ -11,6 +11,11 @@
         default = true;
         description = "Enable SOPS-based secrets management.";
       };
+      hostFile = lib.mkOption {
+        type = lib.types.path;
+        default = config.nixSecrets.root + "/${config.networking.hostName}.yaml";
+        description = "Path to this host's dedicated secrets/<hostname>.yaml file.";
+      };
     };
 
     config = lib.mkIf config.nixSecrets.enable {
