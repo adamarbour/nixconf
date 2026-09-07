@@ -33,5 +33,7 @@
     my.programs = {
       direnv.enable = true;
     };
+
+    my.services.nebula.canSign = true;
   };
 }
