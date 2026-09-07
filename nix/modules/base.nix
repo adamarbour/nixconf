@@ -8,5 +8,11 @@
       has-sops # secrets enabled by default
       policy-security-baseline
     ];
+
+    # base services
+    my.services = {
+      # nebula for backplane everywhere
+      nebula.enable = true;
+    };
   };
 }
