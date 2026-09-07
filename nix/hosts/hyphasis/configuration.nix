@@ -10,7 +10,7 @@ in
       # hardware
       hw-cpu-intel
       hw-gpu-intel
-      #      hw-gpu-nvidia-prime
+      hw-gpu-nvidia-prime
       # disk
       disko
       self.diskoConfigurations.hyphasis
@@ -18,7 +18,7 @@ in
       has-wifi
     ];
 
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
     services = {
       xserver.enable = true;
