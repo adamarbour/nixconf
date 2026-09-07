@@ -7,33 +7,28 @@ keys:
   - &atlas age1q7g4fecwf53vcy6swhp39nkhaalfuamv6mhn4d939e9uj57hcqxq320fe8
 
 creation_rules:
-  - path_regex: ^secrets/(default|atlas)\.yaml$
+  - path_regex: ^secrets/default\.yaml$
     key_groups:
       - age:
         - *master
         - *adam_yk1
         - *adam_yk2
         - *atlas
-
-  - path_regex: ^secrets/(default|hyphasis)\.yaml$
-    key_groups:
-      - age:
-        - *master
-        - *adam_yk1
-        - *adam_yk2
         - *hyphasis
-
-  - path_regex: ^secrets/(default|hellespont)\.yaml$
-    key_groups:
-      - age:
-        - *master
-        - *adam_yk1
-        - *adam_yk2
         - *hellespont
+
+  - path_regex: ^secrets/atlas\.yaml$
+    key_groups:
+      - age: [*master, *adam_yk1, *adam_yk2, *atlas]
+
+  - path_regex: ^secrets/hellespont\.yaml$
+    key_groups:
+      - age: [*master, *adam_yk1, *adam_yk2, *hellespont]
+
+  - path_regex: ^secrets/hyphasis\.yaml$
+    key_groups:
+      - age: [*master, *adam_yk1, *adam_yk2, *hyphasis]
 
   - path_regex: ^secrets/.*$
     key_groups:
-      - age:
-        - *master
-        - *adam_yk1
-        - *adam_yk2
+      - age: [*master, *adam_yk1, *adam_yk2]
