@@ -4,6 +4,7 @@
     imports = with self.modules.nixos; [
       has-audio
       has-graphics
+      has-ssh-agent
       has-yubikey
       policy-polkit
       policy-u2f-yubikey
