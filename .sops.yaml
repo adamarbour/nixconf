@@ -4,7 +4,7 @@ keys:
   - &adam_yk2 age1yubikey1q07dgp7ama6saclfh645f7uvejc4mudqnl54wa5mufr0qt5y6a5ku34vpxz
   - &hellespont age1pyrgtn9ujr949gf6vtd9j89tvmq449nvd2ys5y5uyq6fvfusva5sd9th95
   - &hyphasis age1t8q3fcnwu3lz6ahdp3zvnvt7r24lu9cphausgn8tqx4pzu9v2q7qafrjlz
-  - &atlas age1q7g4fecwf53vcy6swhp39nkhaalfuamv6mhn4d939e9uj57hcqxq320fe8
+  - &atlas age135mu8xpcae3fgs8a60ujjkt2xyjn4h8cvf6t9c9j8s4dhv45x9cqq05k55
 
 creation_rules:
   - path_regex: ^secrets/default\.yaml$
