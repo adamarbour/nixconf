@@ -15,6 +15,7 @@
         {
           isNormalUser = true;
           description = "Adam";
+          shell = pkgs.fish;
           extraGroups = [
             "networkmanager"
             "wheel"
@@ -31,6 +32,11 @@
           hashedPasswordFile = config.sops.secrets.passwd.path;
         })
       ];
+
+      # enabling here for wherever I am deployed
+      my.programs = {
+        fish.enable = lib.mkDefault true;
+      };
 
       sops.secrets = lib.mkIf config.nixSecrets.enable {
         "my-ssh/key" = {
