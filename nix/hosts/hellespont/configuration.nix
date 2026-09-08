@@ -3,7 +3,7 @@ let
   inherit (self.lib) mkNixos;
 in
 {
-  flake.modules.nixos.hellespont = { pkgs, ... }: {
+  flake.modules.nixos.hellespont = {
     imports = with self.modules.nixos; [
       # profiles / roles
       desktop
@@ -19,8 +19,6 @@ in
       has-gaming
       has-wifi
     ];
-
-    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
     services = {
       xserver.enable = true;

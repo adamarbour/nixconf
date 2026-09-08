@@ -12,6 +12,8 @@
       adam
     ];
 
+    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+
     fonts = {
       packages = with pkgs; [
         nerd-fonts.jetbrains-mono

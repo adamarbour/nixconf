@@ -7,6 +7,8 @@
       user-deploy
     ];
 
+    boot.kernelPackages = pkgs.linuxPackages;
+
     powerManagement = {
       cpuFreqGovernor = "schedutil";
       powertop.enable = true;

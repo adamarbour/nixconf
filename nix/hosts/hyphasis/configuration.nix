@@ -3,7 +3,7 @@ let
   inherit (self.lib) mkNixos;
 in
 {
-  flake.modules.nixos.hyphasis = { pkgs, ... }: {
+  flake.modules.nixos.hyphasis = {
     imports = with self.modules.nixos; [
       # profiles / roles
       laptop
@@ -17,8 +17,6 @@ in
       # features
       has-wifi
     ];
-
-    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
     services = {
       xserver.enable = true;
