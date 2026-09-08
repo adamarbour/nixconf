@@ -1,6 +1,11 @@
 {
   flake.modules.nixos.my-programs =
-    { lib, config, ... }:
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
     let
       cfg = config.my.programs;
     in
