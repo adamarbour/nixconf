@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  flake.modules.nixos.server = {
+  flake.modules.nixos.server = { lib, ... }: {
     imports = with self.modules.nixos; [
       grub-boot
       networkd
@@ -14,6 +14,7 @@
 
     my.services = {
       sshguard.enable = true;
+      tailscale.exitNode = lib.mkDefault true;
     };
   };
 }

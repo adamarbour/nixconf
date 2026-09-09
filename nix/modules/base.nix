@@ -13,6 +13,8 @@
     my.services = {
       # nebula for backplane everywhere
       nebula.enable = true;
+      # tailscale for backup
+      tailscale.enable = true;
     };
   };
 }
