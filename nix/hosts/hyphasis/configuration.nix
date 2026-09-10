@@ -27,6 +27,10 @@ in
     };
 
     programs.firefox.enable = true;
+
+    environment.systemPackages = [
+      pkgs.llm-agents.pi
+    ];
   };
 
   flake.nixosConfigurations = mkNixos "x86_64-linux" "hyphasis";
