@@ -20,6 +20,7 @@
             "wheel"
             "deploy"
             "ssh-login"
+            "incus-admin"
           ];
         }
         (lib.mkIf (!config.nixSecrets.enable) {
