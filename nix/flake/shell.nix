@@ -87,6 +87,7 @@
               nixos-anywhere
               nebula
               nh
+              jq
             ]);
 
           startup.git-hooks.text = config.pre-commit.installationScript;

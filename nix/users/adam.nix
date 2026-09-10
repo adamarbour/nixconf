@@ -67,19 +67,11 @@
         ];
 
         files = {
-          ".ssh" = {
-            type = "directory";
-            permissions = "0700";
-          };
           ".ssh/config" = {
-            type = "copy";
-            permissions = "0600";
-
             text = ''
-              Host github.com
-                HostName github.com
-                User git
+              Host *
                 IdentitiesOnly yes
+                IdentityFile ~/.ssh/id_ed25519
                 IdentityFile ~/.ssh/id_ed25519_yk1
                 IdentityFile ~/.ssh/id_ed25519_yk2
             '';
