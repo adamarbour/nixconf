@@ -35,7 +35,7 @@
         clipboard-write = "allow";
         copy-on-select = "clipboard";
 
-        theme = "catppuccin-frappe";
+        theme = "Kanagawa Wave";
 
         keybind = [
           "ctrl+shift+c=copy_to_clipboard"
