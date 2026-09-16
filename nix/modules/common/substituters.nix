@@ -7,6 +7,8 @@
       "https://nix-community.cachix.org"
       "https://attic.xuyh0120.win/lantian"
       "https://cache.numtide.com"
+      "https://colmena.cachix.org"
+      "https://devenv.cachix.org"
     ];
 
     nix.settings.trusted-public-keys = [
@@ -15,6 +17,8 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+      "colmena.cachix.org-1:7BzpDnjjH8ki2CT3f6GdOk7QAzPOl+1t3LvTLXqYcSg="
+      "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
     ];
   };
 }
