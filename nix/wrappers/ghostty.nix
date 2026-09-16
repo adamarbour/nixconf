@@ -35,13 +35,7 @@
         clipboard-write = "allow";
         copy-on-select = "clipboard";
 
-<<<<<<< HEAD
         theme = "Kanagawa Wave";
-||||||| parent of 0ef9d74 (Switching to Mocha)
-        theme = "catppuccin-frappe";
-=======
-        theme = "Catppuccin Mocha";
->>>>>>> 0ef9d74 (Switching to Mocha)
 
         keybind = [
           "ctrl+shift+c=copy_to_clipboard"

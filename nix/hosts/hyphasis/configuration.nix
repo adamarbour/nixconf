@@ -3,7 +3,7 @@ let
   inherit (self.lib) mkNixos;
 in
 {
-  flake.modules.nixos.hyphasis = {
+  flake.modules.nixos.hyphasis = { pkgs, ... }: {
     imports = with self.modules.nixos; [
       # profiles / roles
       laptop
@@ -26,9 +26,9 @@ in
 
     programs.firefox.enable = true;
 
-    environment.systemPackages = [
-      pkgs.llm-agents.pi
-      pkgs.llm-agents.tokscale
+    environment.systemPackages = with pkgs; [
+      llm-agents.pi
+      llm-agents.tokscale
     ];
   };
 
