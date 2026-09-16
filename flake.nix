@@ -50,6 +50,10 @@
         systems.follows = "systems";
       };
     };
+    microvm = {
+      url = "github:microvm-nix/microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     mk-shell-bin.url = "github:rrbutani/nix-mk-shell-bin";
     nix2container = {
       url = "github:nlewo/nix2container";
