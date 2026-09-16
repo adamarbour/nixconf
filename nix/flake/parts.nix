@@ -2,6 +2,7 @@
 {
   imports = with inputs; [
     flake-parts.flakeModules.modules
+    devenv.flakeModule
     devshell.flakeModule
     disko.flakeModules.default
     git-hooks-nix.flakeModule
