@@ -36,6 +36,7 @@
 
     my.programs = {
       direnv.enable = true;
+      devenv.enable = true;
     };
 
     wrappers = {

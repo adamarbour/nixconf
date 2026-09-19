@@ -28,7 +28,6 @@ in
 
     environment.systemPackages = with pkgs; [
       llm-agents.pi
-      llm-agents.tokscale
     ];
   };
 

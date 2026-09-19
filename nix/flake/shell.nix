@@ -88,7 +88,6 @@
               nebula
               nh
               jq
-              devenv
             ]);
 
           startup.git-hooks.text = config.pre-commit.installationScript;
