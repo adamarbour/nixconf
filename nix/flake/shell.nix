@@ -88,6 +88,7 @@
               nebula
               nh
               jq
+              prek
             ]);
 
           startup.git-hooks.text = config.pre-commit.installationScript;

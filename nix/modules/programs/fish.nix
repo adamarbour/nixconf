@@ -24,7 +24,7 @@
             # Ctrl+T: fuzzy file search
             # Alt+C:  fuzzy cd
             if status is-interactive; and type -q fzf
-              fzf --fish | source
+              ${pkgs.fzf}/bin/fzf --fish | source
             end
           '';
         };

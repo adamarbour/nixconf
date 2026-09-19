@@ -38,6 +38,11 @@
         fish.enable = lib.mkDefault true;
       };
 
+      systemd.tmpfiles.rules = [
+        # Type  Path             Mode   User  Group  Argument
+        "d      /home/adam/.ssh  0700   adam  users  -"
+      ];
+
       sops.secrets = lib.mkIf config.nixSecrets.enable {
         "my-ssh/key" = {
           owner = "adam";
@@ -66,12 +71,7 @@
         directory = "/home/adam";
         clobberFiles = true;
 
-        packages = with pkgs; [
-          selfpkgs.my-git
-          age
-          sops
-          ssh-to-age
-        ];
+        packages = import ./adam/_packages.nix { inherit selfpkgs pkgs; };
 
         files = {
           ".ssh/config" = {
